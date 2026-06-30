@@ -17,10 +17,12 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Trash2, Pen } from "@lucide/vue";
+import ModeToggle from "@/components/ModeToggle.vue";
 </script>
 
 <template>
-  <div class="flex min-h-screen items-center justify-center bg-gray-100">
+  <div class="absolute top-4 right-4 z-50"><ModeToggle /></div>
+  <div class="flex min-h-screen items-center justify-center">
     <Card class="w-[50%]">
       <CardHeader>
         <CardTitle>To-do List</CardTitle>
