@@ -18,6 +18,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { Trash2, Pen } from "@lucide/vue";
 import ModeToggle from "@/components/ModeToggle.vue";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 </script>
 
 <template>
@@ -56,7 +64,29 @@ import ModeToggle from "@/components/ModeToggle.vue";
             </TableBody>
           </Table>
         </div> </CardContent
-      ><CardFooter></CardFooter>
+      ><CardFooter class="space-x-2"
+        ><Pagination :items-per-page="10">
+          <PaginationContent>
+            <PaginationItem :value="0">
+              <PaginationPrevious href="#" />
+            </PaginationItem>
+            <PaginationItem :value="1">
+              <PaginationLink href="#"> 1 </PaginationLink>
+            </PaginationItem>
+            <PaginationItem :value="2">
+              <PaginationLink href="#" is-active> 2 </PaginationLink>
+            </PaginationItem>
+            <PaginationItem :value="3">
+              <PaginationLink href="#"> 3 </PaginationLink>
+            </PaginationItem>
+            <PaginationItem :value="4">
+              <PaginationEllipsis />
+            </PaginationItem>
+            <PaginationItem :value="5">
+              <PaginationNext href="#" />
+            </PaginationItem>
+          </PaginationContent> </Pagination
+      ></CardFooter>
     </Card>
   </div>
 </template>
